@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W2D2 JS Intro</title>
+
+    <!--Hello World!-->
+</head>
+<body>
+    
+    <!--Main content of the site-->
+    <div>
+        <!--Control and output for the "Trigger" functionality-->
+        <div>
+            <button id="trigger-button">Trigger</button>
+            <span id="trigger-display"></span>
+        </div>
+        <!--Control and output for the "reload" functionality-->
+        <div>
+            <button id="reload-button">Reload</button>
+            <span id="reload-display"></span>
+        </div>
+    </div>
+   
+    <!--IN DOCUMENT JAVASCRIP BELOW-->
+    <script>
+        //in here we now write Javascript
+        //this is a single line comment
+
+        /*
+
+            this is a multi line comment
+
+        */
+
+        // Variables: friendly names to store data to and use in our programs; JS requires we DECLARE them as variables first using the 'var'keyword
+        var triggerButton //'triggerButton' is now a variable in our program
+
+        //ASSIGNING DATA (INFORMATION) --> = is the assignment operater
+        //we are going to assing some of out HTML elements as data to our JS variables
+        //to do this we must go into the HTML document ans select the element by its ID name
+        triggerButton = document.querySelector(`#trigger-button`)
+
+        //you cab declare & assign all in one step!
+
+        var triggerDisplay = document.querySelector(`#trigger-display`)
+        var reloadButton = document.querySelector(`#reload-button`)
+        var reloadDisplay = document.querySelector(`#reload-display`)
+
+        //what id we just store? is console.log(---NAME---) to see
+        console.log(triggerButton)
+
+
+        //Variables to set up the weapon inventory values
+        var max = 6             //6-chambered weapon; this is the max ammo of the weapon
+        var currentAmmo = max   //ammount of ammo in weapon at the start of the game; will change later
+        var inventory = 10      //amount of extra ammo we are carrying
+
+        //since we've stored out HTML elements, we can access and change them
+        triggerDisplay.innerHTML = `AMMO: ${currentAmmo}`
+        reloadDisplay.innerHTML = `INVENTORY: ${inventory}`
+
+        //FUNTIOND: are blocks of code to specifiy certain things to occur
+        // JS finctions related to buttons require EVENT LISTENERS
+
+        //add event listeners to the ammo button
+        triggerButton.addEventListener(`click`,shoot)
+
+        //create a shoot function to handle the appearance of spending ammo when the button is clicked
+        function shoot(event)
+        {
+            currentAmmo = currentAmmo - 1
+            //initial assignment/storage and reassignment ( = ) occurs from right to left in programming!
+            //shorthand version of line 73: currentAmmo--
+
+            if(currentAmmo < 0)
+            {
+                //"when currentAmmo is less that 0", do the following:
+                currentAmmo = 0
+            }
+
+
+            // rewrite new currentAmmo value to the page!
+            triggerDisplay.innerHTML = `AMMO: ${currentAmmo}`
+        }
+
+    </script>
+</body>
+</html>
