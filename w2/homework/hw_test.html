@@ -92,14 +92,14 @@
         
         function reload(event)
         {
-            inventory = inventory - (currentAmmo < 6)
+            inventory = inventory - (max - currentAmmo)
             if(inventory<0)
             {
                 inventory = 0;
             
             }
             reloadDisplay.innerHTML = `INVENTORY: ${inventory}`
-            currentAmmo = currentAmmo + (currentAmmo < 6)
+            currentAmmo = inventory + max
             
             if(currentAmmo>6)
             {
