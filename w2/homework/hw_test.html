@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 2 Gun Program</title>
+    <title>Week 2 Test</title>
     <!--PUT YOUR NAME IN THE META TAG FOR AUTHOR-->
     <!--Hello World!-->
     <meta name="author" content="Loki Danielson">
@@ -105,10 +105,12 @@
             {
                 currentAmmo = 6;
             }
+            else if (inventory>max)
+            {
+                currentAmmo = (max - currentAmmo) + inventory
+            }
             triggerDisplay.innerHTML = `AMMO: ${currentAmmo}`
-
         }
-
 
     </script>
 </body>
