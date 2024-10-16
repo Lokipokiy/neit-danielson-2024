@@ -92,26 +92,27 @@
         
         function reload(event)
         {
-            inventory = inventory - (max - currentAmmo)
-            if(inventory<0)
-            {
-                inventory = 0;
-            
-            }
-            reloadDisplay.innerHTML = `INVENTORY: ${inventory}`
-            currentAmmo = inventory + max
-            
-            if(currentAmmo>6)
-            {
-                currentAmmo = 6;
-            }
-            else if (inventory>max)
-            {
-                currentAmmo = (max - currentAmmo) + inventory
-            }
-            triggerDisplay.innerHTML = `AMMO: ${currentAmmo}`
-        }
+           if(inventory < (max - currentAmmo))
+           {
+            currentAmmo += inventory 
+            inventory -= inventory
+            // "inventory -= inventory" is "inventory = 0"; It must be after "currentAmmo += inventory" to prevent currentAmmo being set to 0 
+           }
+           else
+           {
+            console.log(`Reload`) 
+            inventory -= (max - currentAmmo)
+            currentAmmo += (max - currentAmmo)
+           }
 
+           if(inventory <= 0)
+           {
+            inventory = 0
+           }
+           triggerDisplay.innerHTML = `AMMO: ${currentAmmo}`
+           reloadDisplay.innerHTML = `INVENTORY: ${inventory}`
+        }
+//This is a full code for proper firing; no ghost ammo, no negative numbers, no over-loading
     </script>
 </body>
 </html>
