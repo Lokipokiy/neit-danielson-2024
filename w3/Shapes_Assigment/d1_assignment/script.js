@@ -1,5 +1,3 @@
-//
-
 var canvas = document.querySelector("canvas")
 
 //RECTANGLE-------------------------------
@@ -55,7 +53,7 @@ var canvas = document.querySelector("canvas")
         pentagon.fill()
         pentagon.closePath()
 //STAR------------------------------------
-    var star = canvas.getContext()
+    var star = canvas.getContext("2d")
         star.beginPath()
         //origin
         star.moveTo(636,497)
@@ -75,3 +73,15 @@ var canvas = document.querySelector("canvas")
         star.lineTo(576,682)
         //line 8
         star.lineTo(584,616)
+        //line 9
+        star.lineTo(538,568)
+        //line 10
+        star.lineTo(604,555)
+        //line 11
+        star.lineTo(636,497)
+        star.strokeStyle = "rgb(32,32,32)"
+        star.lineWidth = 5
+        star.fillStyle = "#ffff00"
+        star.stroke()
+        star.fill()
+        star.closePath
