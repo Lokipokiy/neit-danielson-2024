@@ -29,10 +29,10 @@
 
         //set our starting point for the shape
         //where does the line drawing start [x,y]
-        line.moveTo(0,0);
+        line.moveTo(375,250);
 
         //where does the line end [x,y]
-        line.lineTo(750,500);
+        line.lineTo(750,450);
 
         //change the stroke color; it has go before *.stroke();*
         line.strokeStyle = "rgb(76, 0, 130)"
@@ -65,9 +65,57 @@
 
         //apply the fill color
         triangle.fill()
-        
+
         //ending the shape :3
         triangle.closePath()
+
+//RECTANGLE-----------------------------------------
+        var rectangle = c.getContext("2d")
+
+        rectangle.beginPath()
+
+        //origin point
+        rectangle.moveTo(400, 350)
+        rectangle.lineTo(360, 350)
+        rectangle.lineTo(360, 330)
+        rectangle.lineTo(400, 330)
+        rectangle.lineTo(400, 350)
+
+        rectangle.fillStyle = "purple"
+        rectangle.strokeStyle = "#ffffff"
+
+        rectangle.fill()
+        rectangle.stroke()
+        rectangle.closePath()
+        
+        //shorter rectangle way :3
+        var newRectangle = c.getContext("2d")
+
+        //.rect() - built in method to create a rectangle!
+        //(x-origin, y-origin, width, hight)
+        newRectangle.beginPath()
+        newRectangle.rect(50, 125, 125, 125)
+        newRectangle.strokeStyle = "violet"
+        newRectangle.fillStyle = "violet"
+        newRectangle.stroke()
+        newRectangle.fill()
+        newRectangle.closePath()
+
+        //for shapes, you must have a .beginPath and .closePath to individualize them
+
+//CIRCLES-------------------------------------------
+        var ctx = c.getContext("2d")
+
+        ctx.beginPath()
+        //.arc() - built in method to create a circle!
+        //(x-origin, y-origin, radius, start angle,end angle)
+        //with circles (x,y) is the Center
+        ctx.arc(600, 100, 40, 0, 2 * Math.PI)
+        ctx.strokeStyle = "yellow"
+        ctx.fillStyle = "yellow"
+        ctx.fill()
+        ctx.stroke()
+        ctx.closePath()
 
     </script>
 </body>
