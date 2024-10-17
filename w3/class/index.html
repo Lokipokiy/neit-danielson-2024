@@ -3,9 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>W3 | HTML Canvas</title>
 </head>
 <body>
-    
+    <canvas id="myCanvas" width="750" height="500" style="border:1px solid rgb(76, 0, 130);"></canvas>
+
+    <!--canvas element MUST:
+        *be given a unique ID name
+        *include width & hight attributes
+            - the values are in PIXLES!-->
+
+    <script>
+     
+        //select the canvas by its ID
+        var c = document.getElementById("myCanvas");
+        //this is shorthand for *var circle = document.querySelector("#myCanvas")*
+
+        //view the element ou just selected and stored to the 'c'variable
+        console.log(c)
+//LINE-------------------------------------
+        //getting the context fot the drawing shape
+        //ctx is out shape (line) var name
+        //it will be drawn in 2d inside of 'c' (the myCanvas HTML element)
+        var line = c.getContext("2d");
+
+        //set our starting point for the shape
+        //where does the line drawing start [x,y]
+        line.moveTo(0,0);
+
+        //where does the line end [x,y]
+        line.lineTo(750,500);
+
+        //change the stroke color; it has go before *.stroke();*
+        line.strokeStyle = "rgb(76, 0, 130)"
+
+        //adding a stroke gives the line color! "Draws the path"
+        line.stroke();
+
+//TRIANGLE---------------------------------
+        var triangle = c.getContext("2d");
+
+        triangle.beginPath()
+        //set up our origin point -- .moveTo()
+        triangle.moveTo(375, 250) 
+
+        //first line from origin
+        triangle.lineTo(750,500)
+
+        //second line
+        triangle.lineTo(0, 500)
+
+        //third line
+        triangle.lineTo(375, 250)
+
+        //set stroke color
+        triangle.strokeStyle = "rgb(0,100,200)"
+        triangle.fillStyle = "rgb(0,200,175)"
+
+        //draw the triangle!
+        triangle.stroke()
+
+        //apply the fill color
+        triangle.fill()
+        
+        //ending the shape :3
+        triangle.closePath()
+
+    </script>
 </body>
 </html>
