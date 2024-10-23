@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W4D1 | Game Loop</title>
+</head>
+<body>
+    <script>
+        //Declare our variables here
+
+        //1000 milliseconds is one second
+        var fps = 1000/60
+        
+        //timer calls the game function 60 times per second
+        var timer = setInterval(game, fps)
+
+        //The logic for the game goes here
+        function game()
+        {
+            /*-----------------------------
+            Typical order of operation is:
+            1. Erase the screen
+            2. Preform math that will move a object
+            3. Handle collision detection
+            4. Update the images on the screen
+            ----------------------------*/
+        }
+
+        /*Simplified Version------------------------------
+        var fps = 1000/60 
+        var timer = setInterval(game, fps)
+        function game()
+        {
+           
+        }
+        ------------------------------------------------*/
+    </script>
+    
+</body>
+</html>

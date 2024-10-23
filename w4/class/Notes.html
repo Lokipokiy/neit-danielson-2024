@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W4 | Notes</title>
+</head>
+<body>
+    <script>
+        //Key = Value pairs
+        var student = "Eric"
+
+        //gives access to just the "Eric" value. Can be trouble if you have a class of 23 you need to refer to.
+
+        /*--------------------------------
+        Arrays can keep multipule values
+            - It is for collections of similar data
+            - same data type
+                ~ names, age, grades, emails, etc.
+        Best for
+            - Order is important
+            - Beginning | Middle | End
+            - Batch processing data plans
+        Structured as "key = [index]"
+        --------------------------------*/
+
+        var studentArray = [
+            "Eric",
+            "Jess",
+            "Mark",
+            "Tanya",
+            "Angela"
+        ]
+
+        //to access just "Mark"
+        studentArray[2]
+
+        //to add "David"
+        studentArray[5] = "David"
+
+
+
+        /*Parallel Arrays-----------------
+            - Allows for different data type, still organized but s e p e r a t e
+            - Multiple arrays where data is connected via matching index
+        --------------------------------*/
+
+
+
+        /*Accociative Arrays--------------
+            - No longer automatically organizes the index for you
+            - The String index is assigned by the developer
+        --------------------------------*/
+        var studentArray = []
+
+        studentName[`row1seat1`]="Eric"
+        studentNames[`row1seat2`]="Jess"
+        studentNames[`row1seat3`]="Mark"
+        studentNames[`row1seat4`]="Tanya"
+        studentNames[`row1seat5`]="Angela"
+
+        ///to access “Mark”
+        studentNames[`row1seat3`]
+
+        //to add “David”
+        studentNames[`row2seat1`]="David"
+
+
+
+        /*--------------------------------
+        Objects
+            - Multipule points of date that belong together or are related
+            - Different data types
+                ~ strings, #, booles, arrays, objects, function
+            - Best for when:
+                ~ Order is NOT important
+                ~ Data needs to "stay together"
+                ~ Data need to relate to the main object
+            - Structured as: key = property
+                ~ Developer chooses the property name
+                (objectName.property=value)
+        --------------------------------*/
+        var personObject = {
+            first:"Katie",
+            last:"Truchon",
+            hasPets:true,
+            faveNumber:7,
+            greeting:function(){
+                alert(`Hi there ${this.first}!`)
+            }
+        }
+        
+            //to access Katie’s First Name
+            personObject.first
+           
+            //to add a new property, age value
+            personObject.age = 33
+    </script>
+    
+</body>
+</html>
