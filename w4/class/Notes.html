@@ -12,17 +12,20 @@
 
         //gives access to just the "Eric" value. Can be trouble if you have a class of 23 you need to refer to.
 
-        /*--------------------------------
-        Arrays can keep multipule values
-            - It is for collections of similar data
-            - same data type
-                ~ names, age, grades, emails, etc.
-        Best for
-            - Order is important
-            - Beginning | Middle | End
-            - Batch processing data plans
-        Structured as "key = [index]"
-        --------------------------------*/
+    /*----------------------------------------------------
+        Arrays
+        - can keep multipule values
+        - It is for collections of similar data
+        - same data type
+             ~ names, age, grades, emails, etc.
+        - Arrays can store other arrays
+        - Best for
+            ~ Order is important
+            ~ Beginning | Middle | End
+            ~ Batch processing data plans
+        - Uses Straight Brackets "[]"
+        - Structured as "key = [index]"
+    ----------------------------------------------------*/
 
         var studentArray = [
             "Eric",
@@ -40,17 +43,21 @@
 
 
 
-        /*Parallel Arrays-----------------
+    /*----------------------------------------------------
+        Parallel Arrays
             - Allows for different data type, still organized but s e p e r a t e
             - Multiple arrays where data is connected via matching index
-        --------------------------------*/
+    ----------------------------------------------------*/
 
 
 
-        /*Accociative Arrays--------------
+    /*----------------------------------------------------
+        Accociative Arrays
             - No longer automatically organizes the index for you
+            - Uses Strings instead of Numbers
             - The String index is assigned by the developer
-        --------------------------------*/
+            - No way to increment the array (no Numbers)
+    ----------------------------------------------------*/
         var studentArray = []
 
         studentName[`row1seat1`]="Eric"
@@ -67,7 +74,7 @@
 
 
 
-        /*--------------------------------
+    /*----------------------------------------------------
         Objects
             - Multipule points of date that belong together or are related
             - Different data types
@@ -76,10 +83,16 @@
                 ~ Order is NOT important
                 ~ Data needs to "stay together"
                 ~ Data need to relate to the main object
+            -Uses the Curly Brackes "{}"
+            - "Property", "Attribute", or "Memeber Data" refers to the variables stored in an object
+            - Functions(methods) can be stored in an object
+            - You can use the same operater in different objects to keep them seperated (same name, different location)
             - Structured as: key = property
                 ~ Developer chooses the property name
                 (objectName.property=value)
-        --------------------------------*/
+
+        * Everything from varablies, arrays, HTML tags (innerHTML, href, src, id, etc.), .eventListeners, etc. are objects *
+    ----------------------------------------------------*/
         var personObject = {
             first:"Katie",
             last:"Truchon",
@@ -95,6 +108,32 @@
            
             //to add a new property, age value
             personObject.age = 33
+
+
+    /*----------------------------------------------------
+        Misc. Notes
+            - The "this" operater mean `me` or `I`
+                ~ or "this = person"
+            - For more than 1 person, keep the "this" operater in the respective objects
+        
+        I.E. 
+            var person1 = {  
+              first: `Katie`,  
+              last: `Tructon`,  
+              greeting: function(){alert(`My name is ${this.first} ${this.last}.`)} 
+            }
+            
+            var person2 = {  
+              first: `Vinny`,  
+              last: `Ritoli`,  
+              greeting: function(){alert(`My name is ${this.first} ${this.last}.`)} 
+            }
+            person1.greeting()
+            person2.greeting()
+
+        - this = person1 for Katie
+        - this - person2 for Vinny
+    ----------------------------------------------------*/
     </script>
     
 </body>
