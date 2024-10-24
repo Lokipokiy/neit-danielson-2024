@@ -30,3 +30,46 @@ for(var i = 0; i < htmlNames.length; i++){
    
     console.log(`INDEX ${i}: ${htmlNames[i]}`)
 }
+
+//ASSOCIATIVE ARRAY----------------------------------------------
+var htmlColors = []
+htmlColors[`zero`] = `Green`
+htmlColors[`one`] = `Blue`
+htmlColors[`two`] = `Blue`
+htmlColors[`three`] = `Blue`
+htmlColors[`four`] = `Orange`
+
+//"FOR IN KEY" loop -- used for associtive arrays (and objects!)
+for(var key in htmlColors){
+   
+    console.log(`INDEX ${key}: ${htmlColors[key]}`)
+}
+
+
+//OBJECTS--------------------------------------------------------
+//key --> property ; can be reused across objects;
+//use "dot syntax" object.property to access the value
+var gds111_0 = {
+    first: `Loki`,      //string type
+    color: `green`,     //string type
+    age: 20,            //number type
+    hasPets: true,     //boolean type
+    petNames: [`Arthur`, `Merlin`, `Polaris`, `Minerva`]
+}
+
+//access one value: object.property to access the value
+//read like the POSESSIVE APOSTOPHE: gds111_0's first name
+console.log(`gds11_0 name: ${gds111_0.first}`)
+
+for(var key in gds111_0){
+    console.log(`PROPERTY ${key}: ${gds111_0[key]}`)
+
+    if(key == `hasPets`){
+        
+        if(gds111_0[key] == true){
+            for(var i = 0; i <gds111_0.petNames.length; i++){
+                console.log(`Pets#${i}: ${gds111_0.petNames[i]}`)
+            }
+        }
+    }
+}
