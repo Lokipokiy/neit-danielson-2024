@@ -106,7 +106,7 @@ function main()
         /*----------INSTRUCTION------------
         increase the score by one
         -----------------------------------*/
-        score ++
+        score++; //Needs to be smushed together
     }
     
     for(var i=0; i<pickups.length; i++)
@@ -119,7 +119,7 @@ function main()
         {
             pickups[i].x = 1000;
             avatar.color = pickups[i].color;
-            score ++
+            score++; //Needs to be smushed together
             
         }
         pickups[i].render();
@@ -138,13 +138,9 @@ function main()
     HINT: You will have to research how this works 
     W3schools.com and your book can help
     -----------------------------------*/
-    ctx.fillText (`Score: ${score}`, 0, 50)
+    ctx.fillText (`Score: ${score}`, 0, 50);    //SEMICOLON YOU DUMBASS
     ctx.font = `64px Arial`
 
-    function newFunction() {
-        for (score; ;) {
-        }
-    }
 }
 
 //random number generator
