@@ -109,23 +109,23 @@ function init()
 
     // V-bar Top Left of Starting Box - (Connected to "1st Top of Starting Box")
     wall[9]=new GameObject();
-    wall[9].h = 500
+    wall[9].h = 502
     wall[9].w = 24
     wall[9].color = `purple`
     wall[9].x = c.width/2.3
     wall[9].y = -290
     wall[9].world = level
 
-    //Top Dead End Left - 
+    //Top Dead End Left - (Connected to " V-bar Top Left of Starting Box" & "Top Passage Left")
     wall[10]=new GameObject();
     wall[10].h = 24
-    wall[10].w = 100
+    wall[10].w = 200
     wall[10].color = `purple`
-    wall[10].x = c.width/4
-    wall[10].y = -400
+    wall[10].x = 452
+    wall[10].y = -529
     wall[10].world = level
 
-    // Top Passage Left - (Connected to "START SCREEN BOX TOP")
+    // Top Passage Left - (Connected to "START SCREEN BOX TOP" & "Top Dead End Left")
     wall[11]=new GameObject();
     wall[11].h = 610
     wall[11].w = 24
@@ -133,6 +133,16 @@ function init()
     wall[11].x = c.width/1.436
     wall[11].y = -236
     wall[11].world = level
+
+    //
+    wall[12]=new GameObject();
+    wall[12].h = 24
+    wall[12].w = 175
+    wall[12].color = `purple`
+    wall[12].x = 775
+    wall[12].y = 40
+
+    wall[12].world = level
 
 
     sword.color = `#000000`;
