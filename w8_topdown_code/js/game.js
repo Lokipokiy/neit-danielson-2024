@@ -52,7 +52,7 @@ function init()
     wall[2].x = 200;
     wall[2].y = c.height/2.67
     wall[2].world = level
-    //START SCREEB BOX BOTTOM
+    //START SCREEN BOX BOTTOM
     wall[3]=new GameObject();
     wall[3].h = 24;
     wall[3].w = 375;
@@ -62,7 +62,7 @@ function init()
     wall[3].world = level
 
     /*-----------------WALLS OUTSIDE STARTING SCREEN-----------------------*/
-    // Bottom Passage - Left
+    // Bottom Passage Left - (Connected to "START SCREEN BOX BOTTOM")
     wall[4]=new GameObject();
     wall[4].h = 132
     wall[4].w = 24
@@ -71,7 +71,7 @@ function init()
     wall[4].y = 493
     wall[4].world = level
    
-    //1st Below Starting Box (Connected to "Bottom Passage - Left")
+    //1st Below of Starting Box (Connected to "Bottom Passage - Left")
     wall[5]=new GameObject();
     wall[5].h = 24;
     wall[5].w = 500;
@@ -80,7 +80,7 @@ function init()
     wall[5].y = 550
     wall[5].world = level
 
-    // 1st Left Starting Box - Bottom Segment (Connected to "1st Below Starting Box")
+    // 1st Left of Starting Box - Bottom Segment (Connected to "1st Below of Starting Box")
     wall[6]=new GameObject();
     wall[6].h = 375
     wall[6].w = 24
@@ -89,7 +89,7 @@ function init()
     wall[6].y = c.height-125
     wall[6].world = level
     
-    // 1st Left Starting Box - Top Segmentd
+    // 1st Left of Starting Box - Top Segment
     wall[7]=new GameObject();
     wall[7].h = 290
     wall[7].w = 24
@@ -98,23 +98,41 @@ function init()
     wall[7].y = c.height-570
     wall[7].world = level
 
-    // 1st Top Starting Box
+    // 1st Top of Starting Box - (Connected to "1st Left of Starting Box - Top Segment")
     wall[8]=new GameObject();
     wall[8].h = 24;
-    wall[8].w = 380;
+    wall[8].w = 260;
     wall[8].color = `purple`
-    wall[8].x = c.width/2.8
+    wall[8].x = c.width/3.55
     wall[8].y = -203
     wall[8].world = level
 
-    // 1st Right Starting Box - Segment 2
+    // V-bar Top Left of Starting Box - (Connected to "1st Top of Starting Box")
     wall[9]=new GameObject();
-    wall[9].h = 250
+    wall[9].h = 500
     wall[9].w = 24
     wall[9].color = `purple`
-    wall[9].x = c.width+100
-    wall[9].y = c.height-500
+    wall[9].x = c.width/2.3
+    wall[9].y = -290
     wall[9].world = level
+
+    //Top Dead End Left - 
+    wall[10]=new GameObject();
+    wall[10].h = 24
+    wall[10].w = 100
+    wall[10].color = `purple`
+    wall[10].x = c.width/4
+    wall[10].y = -400
+    wall[10].world = level
+
+    // Top Passage Left - (Connected to "START SCREEN BOX TOP")
+    wall[11]=new GameObject();
+    wall[11].h = 610
+    wall[11].w = 24
+    wall[11].color = `purple`
+    wall[11].x = c.width/1.436
+    wall[11].y = -236
+    wall[11].world = level
 
 
     sword.color = `#000000`;
