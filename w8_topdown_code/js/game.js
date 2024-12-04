@@ -28,38 +28,94 @@ function init()
 
     level.x = 0; 
     level.y = 0;
-
+    //START SCREEN BOX TOP
     wall[0]=new GameObject();
-    wall[0].h = 20;
-    wall[0].w = 500;
+    wall[0].h = 24;
+    wall[0].w = 375;
     wall[0].color = `purple`
-    wall[0].x = c.width/2;
-    wall[0].y = 100
+    wall[0].x = c.width/2.1
+    wall[0].y = 60
     wall[0].world = level
-
+    //START SCREEN BOX RIGHT
     wall[1]=new GameObject();
-    wall[1].h = 400;
+    wall[1].h = 628;
     wall[1].w = 24;
     wall[1].color = `purple`
     wall[1].x = 700;
-    wall[1].y = c.height/2
+    wall[1].y = c.height/1.4
     wall[1].world = level
-
+    //START SCREEN BOX LEFT
     wall[2]=new GameObject();
-    wall[2].h = 400;
+    wall[2].h = 525;
     wall[2].w = 24;
     wall[2].color = `purple`
     wall[2].x = 200;
-    wall[2].y = c.height/2
+    wall[2].y = c.height/2.67
     wall[2].world = level
-
+    //START SCREEB BOX BOTTOM
     wall[3]=new GameObject();
-    wall[3].w = 400;
     wall[3].h = 24;
+    wall[3].w = 375;
     wall[3].color = `purple`
-    wall[3].x = c.width/2
-    wall[3].y = c.height-100
+    wall[3].x = c.width/2.1
+    wall[3].y = c.height-62
     wall[3].world = level
+
+    /*-----------------WALLS OUTSIDE STARTING SCREEN-----------------------*/
+    // Bottom Passage - Left
+    wall[4]=new GameObject();
+    wall[4].h = 132
+    wall[4].w = 24
+    wall[4].color = `purple`
+    wall[4].x = 565
+    wall[4].y = 493
+    wall[4].world = level
+   
+    //1st Below Starting Box (Connected to "Bottom Passage - Left")
+    wall[5]=new GameObject();
+    wall[5].h = 24;
+    wall[5].w = 500;
+    wall[5].color = `purple`
+    wall[5].x = 325
+    wall[5].y = 550
+    wall[5].world = level
+
+    // 1st Left Starting Box - Bottom Segment (Connected to "1st Below Starting Box")
+    wall[6]=new GameObject();
+    wall[6].h = 375
+    wall[6].w = 24
+    wall[6].color = `purple`
+    wall[6].x = c.width-715
+    wall[6].y = c.height-125
+    wall[6].world = level
+    
+    // 1st Left Starting Box - Top Segmentd
+    wall[7]=new GameObject();
+    wall[7].h = 290
+    wall[7].w = 24
+    wall[7].color = `purple`
+    wall[7].x = c.width-715
+    wall[7].y = c.height-570
+    wall[7].world = level
+
+    // 1st Top Starting Box
+    wall[8]=new GameObject();
+    wall[8].h = 24;
+    wall[8].w = 380;
+    wall[8].color = `purple`
+    wall[8].x = c.width/2.8
+    wall[8].y = -203
+    wall[8].world = level
+
+    // 1st Right Starting Box - Segment 2
+    wall[9]=new GameObject();
+    wall[9].h = 250
+    wall[9].w = 24
+    wall[9].color = `purple`
+    wall[9].x = c.width+100
+    wall[9].y = c.height-500
+    wall[9].world = level
+
 
     sword.color = `#000000`;
 }
