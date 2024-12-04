@@ -134,16 +134,49 @@ function init()
     wall[11].y = -236
     wall[11].world = level
 
-    //
+    // Top Passage Right - (Connected to "START SCREEN BOX RIGHT")
     wall[12]=new GameObject();
     wall[12].h = 24
-    wall[12].w = 175
+    wall[12].w = 350
     wall[12].color = `purple`
-    wall[12].x = 775
+    wall[12].x = 863
     wall[12].y = 40
-
     wall[12].world = level
 
+    // V-Bar Top Right of Starting Box (Connected To "Top Passage Right")
+    wall[13]=new GameObject();
+    wall[13].h = 582
+    wall[13].w = 24
+    wall[13].color = `purple`
+    wall[13].x = 1026
+    wall[13].y = -250
+    wall[13].world = level
+
+    //Top Passage Jutout (Connected to "Top Passage Right")
+    wall[14]=new GameObject();
+    wall[14].h = 24
+    wall[14].w = 350
+    wall[14].color = `purple`
+    wall[14].x = 725
+    wall[14].y = -110
+    wall[14].world = level
+
+    // V-bar on jutout (Connected to "Top Passage Jutout")
+    wall[15]=new GameObject();
+    wall[15].h = 435
+    wall[15].w = 24
+    wall[15].color = `purple`
+    wall[15].x = 775
+    wall[15].y = -323
+    wall[15].world = level
+
+    wall[16]=new GameObject();
+    wall[16].h = 24
+    wall[16].w = 250
+    wall[16].color = `purple`
+    wall[16].x = 890
+    wall[16].y = -529
+    wall[16].world = level
 
     sword.color = `#000000`;
 }
