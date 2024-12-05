@@ -145,7 +145,7 @@ function init()
     wall[10].x = -28
     wall[10].y = 162
 
-    //2nd Top of Starting box - Left Segement (Connected to "2nd Left of Starting Box") = h
+    //2nd Top of Starting box (Connected to "2nd Left of Starting Box") = h
     wall[36].w = 260
     wall[36].x = 90
     wall[36].y = -317
@@ -180,14 +180,46 @@ function init()
     wall[39].x = 800
     wall[39].y = 575
 
-    //V-bar Jutout Top-to-Bottom (Connected to "Left Side Jutout") = v
+    //V-bar Jutout Top-to-Bottom - Top Segment (Connected to "Left Side Jutout") = v
     wall[14].h = 315
     wall[14].x = 878
     wall[14].y = 740
 
-    
+    //3rd Below of Starting Box - Right Segement (Connected to "Seperate V-Bar Right of Starting Box") = h
+    wall[40].w = 150
+    wall[40].x = 955
+    wall[40].y = 1003
 
+    //V-bar Jutout Top-to-Bottom - Bottom Segment (Connected to "3rd Below of Starting Box - Right Segement") = v
+    wall[15].h = 325
+    wall[15].x = 878
+    wall[15].y = 1154
 
+    //5th Below of Starting Box (Connected to "V-bar Jutout Top-to-Bottom - Bottom Segment") = h
+    wall[41].w = 500
+    wall[41].x = 635
+    wall[41].y = 1305
+
+    //Bottom Dead End (Connected to "5th Below of Starting Box") = v
+    wall[16].h = 175
+    wall[16].x = 380
+    wall[16].y = 1229
+
+    //4th Below of Starting Box (Connected to "Bottom Dead End") = h
+    wall[42].w = 325
+    wall[42].x = 531
+    wall[42].y = 1140
+
+    //Final Below Starting Box (Connected to "V-bar 2nd Top Right of Starting Box") = h
+    wall[43].w = 150
+    wall[43].x = 1110
+    wall[43].y = 1139
+
+    //V-Bar uhhhhhhh = v
+    wall[17].h = 325
+    wall[17].x = 1047
+    wall[17].y = 1300
+1
 
     sword.color = `#000000`;
 
