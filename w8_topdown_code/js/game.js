@@ -29,7 +29,7 @@ function init()
     level.x = 0; 
     level.y = 0;
 
-    for(let i=0; i<51; i++) 
+    for(let i=0; i<52; i++) 
     {
         if(i<25) //Vertical (v)
         {
@@ -46,23 +46,23 @@ function init()
             wall[i].world = level
         }
     }
-    //START SCREEN BOX TOP = v
+    //START SCREEN BOX TOP = h
     
     wall[27].w = 375;
     wall[27].x = c.width/2.1
     wall[27].y = 60
 
-    //START SCREEN BOX RIGHT = h
-    wall[1].h = 628;
+    //START SCREEN BOX RIGHT = v
+    //wall[1].h = 628;
     wall[1].x = 700;
     wall[1].y = c.height/1.4
 
-    //START SCREEN BOX LEFT = h
+    //START SCREEN BOX LEFT = v
     wall[2].h = 525;
     wall[2].x = 200;
     wall[2].y = c.height/2.67
 
-    //START SCREEN BOX BOTTOM = v
+    //START SCREEN BOX BOTTOM = h
     wall[28].w = 375;
     wall[28].x = c.width/2.1
     wall[28].y = c.height-62
@@ -94,12 +94,12 @@ function init()
     wall[30].x = c.width/3.55
     wall[30].y = -203
     
-    // V-bar Top Left of Starting Box - (Connected to "1st Top of Starting Box") = v
+    // V-bar 1st Top Left of Starting Box - (Connected to "1st Top of Starting Box") = v
     wall[6].h = 502
     wall[6].x = c.width/2.3
     wall[6].y = -290
     
-    //Top Dead End Left - (Connected to " V-bar Top Left of Starting Box" & "Top Passage Left") = h
+    //Top Dead End Left - (Connected to " V-bar 1st Top Left of Starting Box" & "Top Passage Left") = h
     wall[31].w = 200
     wall[31].x = 452
     wall[31].y = -529
@@ -114,7 +114,7 @@ function init()
     wall[32].x = 863
     wall[32].y = 40
 
-    // V-Bar Top Right of Starting Box (Connected To "Top Passage Right") = v
+    // V-Bar 1st Top Right of Starting Box (Connected To "Top Passage Right") = v
     wall[8].h = 582
     wall[8].x = 1026
     wall[8].y = -250
@@ -130,15 +130,67 @@ function init()
     wall[9].x = 775
     wall[9].y = -323
     
-    //Top Dead End Right (Connected to "V-bar on jutout" & "V-Bar Top Right of Starting Box") = h
+    //Top Dead End Right (Connected to "V-bar on jutout" & "V-Bar 1st Top Right of Starting Box") = h
     wall[34].w = 250
     wall[34].x = 890
     wall[34].y = -529
 
     //2nd Below Starting Box (Connected to "START SCREEN BOX RIGHT") = h
+    wall[35].w = 750
+    wall[35].x = 335
+    wall[35].y = 660
+
+    //2nd Left of Starting Box (Connected to "2nd Below Starting Box") = v
+    wall[10].h = 975
+    wall[10].x = -28
+    wall[10].y = 162
+
+    //2nd Top of Starting box - Left Segement (Connected to "2nd Left of Starting Box") = h
+    wall[36].w = 260
+    wall[36].x = 90
+    wall[36].y = -317
+
+    //V-bar 2nd Top Left of Starting Box (Connected to "2nd Top of Starting box") = v
+    wall[11].h = 325
+    wall[11].x = 208
+    wall[11].y = -468
+
+    //3rd Top of Starting Box (Connected to "V-bar 2nd Top Left of Starting Box") = h
+    wall[37].w = 991
+    wall[37].x = 690
+    wall[37].y = -640
+
+    //V-bar 2nd Top Right of Starting Box (Connected to "3rd Top of Starting Box") = v
+    wall[12].h = 1800
+    wall[12].x = 1174
+    wall[12].y = 250
+
+    //Seperate V-Bar Right of Starting Box = v
+    wall[13].h = 860
+    wall[13].x = 1026
+    wall[13].y = 585
+
+    //Right Side Jutout (Connected to "Seperate V-Bar Right of Starting Box") = h
+    wall[38].w = 200
+    wall[38].x = 925
+    wall[38].y = 300
+
+    //Left Side Jutout (Connected to "START SCREEN BOX RIGHT") = h
+    wall[39].w = 180
+    wall[39].x = 800
+    wall[39].y = 575
+
+    //V-bar Jutout Top-to-Bottom (Connected to "Left Side Jutout") = v
+    wall[14].h = 315
+    wall[14].x = 878
+    wall[14].y = 740
+
     
 
+
+
     sword.color = `#000000`;
+
 }
 
 init();
