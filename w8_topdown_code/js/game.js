@@ -29,9 +29,9 @@ function init()
     level.x = 0; 
     level.y = 0;
 
-    for(let i=0; i<52; i++) 
+    for(let i=0; i<51; i++) 
     {
-        if(i<25) //Vertical (v)
+        if(i<26) //Vertical (v)
         {
             wall[i] = new GameObject();
             wall[i].w = 24
@@ -52,7 +52,7 @@ function init()
     wall[27].y = 60
 
     //START SCREEN BOX RIGHT = v
-    //wall[1].h = 628;
+    wall[1].h = 628;
     wall[1].x = 700;
     wall[1].y = c.height/1.4
 
@@ -165,7 +165,7 @@ function init()
     wall[12].y = 250
 
     //Seperate V-Bar Right of Starting Box = v
-    //wall[13].h = 860
+    wall[13].h = 860
     wall[13].x = 1026
     wall[13].y = 585
 
@@ -235,8 +235,8 @@ function init()
     wall[45].y = 864
 
     //End H-Bar Top (Connected to "2nd Left of Starting Box") = h
-    wall[46].w = 600
-    wall[46].x = -330
+    wall[46].w = 900
+    wall[46].x = -467
     wall[46].y = 100
 
     //Dead End V-Bar Right (Connected to "H-Bar dead end") = v
@@ -248,6 +248,51 @@ function init()
     wall[20].h = 670
     wall[20].x = -240
     wall[20].y = 540
+
+    //V-Bar Below in Final Path (Connected to "Furthest Bottom H-Bar") = v
+    wall[21].h = 438
+    wall[21].x = 212
+    wall[21].y = 1241
+
+    //4th Below of Starting Box Left (Connected to "V-Bar Below in Final Path") = h
+    wall[47].w = 1200
+    wall[47].x = -80
+    wall[47].y = 1034
+
+    //V-bar Left in Final Path (Connected to "4th Below of Starting Box Left") = v
+    wall[22].h = 745
+    wall[22].x = -668
+    wall[22].y = 650
+
+    //End H-Bar Bottom (Connected to "V-bar Left in Final Path") = h
+    wall[48].w = 260
+    wall[48].x = -786
+    wall[48].y = 275
+
+    //Final Box Right Top = v
+    wall[23].h = 150
+    wall[23].x = -905
+    wall[23].y = 25
+
+    //Final Box Right Bottom = v 
+    wall[24].h = 150
+    wall[24].x = -905
+    wall[24].y = 340
+
+    //Final Box Top = h
+    wall[49].w = 250
+    wall[49].x = -1025
+    wall[49].y = -38
+
+    //Final Box Bottom = h
+    wall[50].w = 250
+    wall[50].x = -1025
+    wall[50].y = 403
+
+    //Final Box Left = v
+    wall[25].h = 425
+    wall[25].x = -1138
+    wall[25].y = 183
 
     sword.color = `#000000`;
 
