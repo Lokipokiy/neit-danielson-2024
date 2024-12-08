@@ -47,7 +47,6 @@ function init()
         }
     }
     //START SCREEN BOX TOP = h
-    
     wall[27].w = 375;
     wall[27].x = c.width/2.1
     wall[27].y = 60
@@ -166,7 +165,7 @@ function init()
     wall[12].y = 250
 
     //Seperate V-Bar Right of Starting Box = v
-    wall[13].h = 860
+    //wall[13].h = 860
     wall[13].x = 1026
     wall[13].y = 585
 
@@ -215,11 +214,40 @@ function init()
     wall[43].x = 1110
     wall[43].y = 1139
 
-    //V-Bar uhhhhhhh = v
+    //4th Below of Starting Box Right (Connected to "Final Below Starting Box") = v 
     wall[17].h = 325
     wall[17].x = 1047
     wall[17].y = 1300
-1
+
+    //Furthest Bottom H-Bar (Connected to "4th Below of Starting Box Right") = h
+    wall[44].w = 850
+    wall[44].x = 625
+    wall[44].y = 1450
+
+    //V-bar for dead end (Connected to "4th Below of Starting Box") = v
+    wall[18].h = 280
+    wall[18].x = 681
+    wall[18].y = 992
+
+    //H-Bar dead end (connected to "V-bar for dead end") = h
+    wall[45].w = 1100
+    wall[45].x = 120
+    wall[45].y = 864
+
+    //End H-Bar Top (Connected to "2nd Left of Starting Box") = h
+    wall[46].w = 600
+    wall[46].x = -330
+    wall[46].y = 100
+
+    //Dead End V-Bar Right (Connected to "H-Bar dead end") = v
+    wall[19].h = 760
+    wall[19].x = -418
+    wall[19].y = 490
+
+    //V-Bar Jutout Dead End (Connected To "H-Bar dead end") = v
+    wall[20].h = 670
+    wall[20].x = -240
+    wall[20].y = 540
 
     sword.color = `#000000`;
 
