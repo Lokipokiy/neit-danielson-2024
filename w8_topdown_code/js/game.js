@@ -4,7 +4,9 @@ var ctx = c.getContext(`2d`)
 var fps = 1000/60
 var timer = setInterval(main, fps)
 
-function main()
+
+
+    function main()
 {
     ctx.clearRect(0,0,c.width,c.height); 
     state()
@@ -20,6 +22,7 @@ var sword = new GameObject();
 var bad = new GameObject();
 var wall = [];
 
+
 function init()
 {
     state = menu
@@ -29,7 +32,7 @@ function init()
     level.x = 0; 
     level.y = 0;
 
-    for(let i=0; i<51; i++) 
+    for(let i=0; i<50; i++) 
     {
         if(i<26) //Vertical (v)
         {
@@ -37,6 +40,7 @@ function init()
             wall[i].w = 24
             wall[i].color = `purple`
             wall[i].world = level
+            
         }
         else //Horizontail (h)
         {
@@ -47,9 +51,9 @@ function init()
         }
     }
     //START SCREEN BOX TOP = h
-    wall[27].w = 375;
-    wall[27].x = c.width/2.1
-    wall[27].y = 60
+    wall[26].w = 375;
+    wall[26].x = c.width/2.1
+    wall[26].y = 60
 
     //START SCREEN BOX RIGHT = v
     wall[1].h = 628;
@@ -62,9 +66,9 @@ function init()
     wall[2].y = c.height/2.67
 
     //START SCREEN BOX BOTTOM = h
-    wall[28].w = 375;
-    wall[28].x = c.width/2.1
-    wall[28].y = c.height-62
+    wall[27].w = 375;
+    wall[27].x = c.width/2.1
+    wall[27].y = c.height-62
     
 
     /*-----------------WALLS OUTSIDE STARTING SCREEN-----------------------*/
@@ -74,9 +78,9 @@ function init()
     wall[3].y = 493
     
     //1st Below of Starting Box (Connected to "Bottom Passage - Left") = h
-    wall[29].w = 500;
-    wall[29].x = 325
-    wall[29].y = 550
+    wall[28].w = 500;
+    wall[28].x = 325
+    wall[28].y = 550
 
     // 1st Left of Starting Box - Bottom Segment (Connected to "1st Below of Starting Box") = v
     wall[4].h = 375
@@ -89,9 +93,9 @@ function init()
     wall[5].y = c.height-570
     
     // 1st Top of Starting Box - (Connected to "1st Left of Starting Box - Top Segment") = h
-    wall[30].w = 260;
-    wall[30].x = c.width/3.55
-    wall[30].y = -203
+    wall[29].w = 260;
+    wall[29].x = c.width/3.55
+    wall[29].y = -203
     
     // V-bar 1st Top Left of Starting Box - (Connected to "1st Top of Starting Box") = v
     wall[6].h = 502
@@ -99,9 +103,9 @@ function init()
     wall[6].y = -290
     
     //Top Dead End Left - (Connected to " V-bar 1st Top Left of Starting Box" & "Top Passage Left") = h
-    wall[31].w = 200
-    wall[31].x = 452
-    wall[31].y = -529
+    wall[30].w = 200
+    wall[30].x = 452
+    wall[30].y = -529
     
     // Top Passage Left - (Connected to "START SCREEN BOX TOP" & "Top Dead End Left") = v
     wall[7].h = 610
@@ -109,9 +113,9 @@ function init()
     wall[7].y = -236
     
     // Top Passage Right - (Connected to "START SCREEN BOX RIGHT") = h
-    wall[32].w = 350
-    wall[32].x = 863
-    wall[32].y = 40
+    wall[31].w = 350
+    wall[31].x = 863
+    wall[31].y = 40
 
     // V-Bar 1st Top Right of Starting Box (Connected To "Top Passage Right") = v
     wall[8].h = 582
@@ -119,10 +123,9 @@ function init()
     wall[8].y = -250
     
     //Top Passage Jutout (Connected to "Top Passage Left") = h
-    wall[33].h = 24
-    wall[33].w = 350
-    wall[33].x = 725
-    wall[33].y = -110
+    wall[32].w = 350
+    wall[32].x = 725
+    wall[32].y = -110
 
     // V-bar on jutout (Connected to "Top Passage Jutout") = v
     wall[9].h = 435
@@ -130,14 +133,14 @@ function init()
     wall[9].y = -323
     
     //Top Dead End Right (Connected to "V-bar on jutout" & "V-Bar 1st Top Right of Starting Box") = h
-    wall[34].w = 250
-    wall[34].x = 890
-    wall[34].y = -529
+    wall[33].w = 250
+    wall[33].x = 890
+    wall[33].y = -529
 
     //2nd Below Starting Box (Connected to "START SCREEN BOX RIGHT") = h
-    wall[35].w = 750
-    wall[35].x = 335
-    wall[35].y = 660
+    wall[34].w = 750
+    wall[34].x = 335
+    wall[34].y = 660
 
     //2nd Left of Starting Box (Connected to "2nd Below Starting Box") = v
     wall[10].h = 975
@@ -145,9 +148,9 @@ function init()
     wall[10].y = 162
 
     //2nd Top of Starting box (Connected to "2nd Left of Starting Box") = h
-    wall[36].w = 260
-    wall[36].x = 90
-    wall[36].y = -317
+    wall[35].w = 260
+    wall[35].x = 90
+    wall[35].y = -317
 
     //V-bar 2nd Top Left of Starting Box (Connected to "2nd Top of Starting box") = v
     wall[11].h = 325
@@ -155,9 +158,9 @@ function init()
     wall[11].y = -468
 
     //3rd Top of Starting Box (Connected to "V-bar 2nd Top Left of Starting Box") = h
-    wall[37].w = 991
-    wall[37].x = 690
-    wall[37].y = -640
+    wall[36].w = 991
+    wall[36].x = 690
+    wall[36].y = -640
 
     //V-bar 2nd Top Right of Starting Box (Connected to "3rd Top of Starting Box") = v
     wall[12].h = 1800
@@ -170,14 +173,14 @@ function init()
     wall[13].y = 585
 
     //Right Side Jutout (Connected to "Seperate V-Bar Right of Starting Box") = h
-    wall[38].w = 200
-    wall[38].x = 925
-    wall[38].y = 300
+    wall[37].w = 200
+    wall[37].x = 925
+    wall[37].y = 300
 
     //Left Side Jutout (Connected to "START SCREEN BOX RIGHT") = h
-    wall[39].w = 180
-    wall[39].x = 800
-    wall[39].y = 575
+    wall[38].w = 180
+    wall[38].x = 800
+    wall[38].y = 575
 
     //V-bar Jutout Top-to-Bottom - Top Segment (Connected to "Left Side Jutout") = v
     wall[14].h = 315
@@ -185,9 +188,9 @@ function init()
     wall[14].y = 740
 
     //3rd Below of Starting Box - Right Segement (Connected to "Seperate V-Bar Right of Starting Box") = h
-    wall[40].w = 150
-    wall[40].x = 955
-    wall[40].y = 1003
+    wall[39].w = 150
+    wall[39].x = 955
+    wall[39].y = 1003
 
     //V-bar Jutout Top-to-Bottom - Bottom Segment (Connected to "3rd Below of Starting Box - Right Segement") = v
     wall[15].h = 325
@@ -195,9 +198,9 @@ function init()
     wall[15].y = 1154
 
     //5th Below of Starting Box (Connected to "V-bar Jutout Top-to-Bottom - Bottom Segment") = h
-    wall[41].w = 500
-    wall[41].x = 635
-    wall[41].y = 1305
+    wall[40].w = 500
+    wall[40].x = 635
+    wall[40].y = 1305
 
     //Bottom Dead End (Connected to "5th Below of Starting Box") = v
     wall[16].h = 175
@@ -205,14 +208,14 @@ function init()
     wall[16].y = 1229
 
     //4th Below of Starting Box (Connected to "Bottom Dead End") = h
-    wall[42].w = 325
-    wall[42].x = 531
-    wall[42].y = 1140
+    wall[41].w = 325
+    wall[41].x = 531
+    wall[41].y = 1140
 
     //Final Below Starting Box (Connected to "V-bar 2nd Top Right of Starting Box") = h
-    wall[43].w = 150
-    wall[43].x = 1110
-    wall[43].y = 1139
+    wall[42].w = 150
+    wall[42].x = 1110
+    wall[42].y = 1139
 
     //4th Below of Starting Box Right (Connected to "Final Below Starting Box") = v 
     wall[17].h = 325
@@ -220,9 +223,9 @@ function init()
     wall[17].y = 1300
 
     //Furthest Bottom H-Bar (Connected to "4th Below of Starting Box Right") = h
-    wall[44].w = 850
-    wall[44].x = 625
-    wall[44].y = 1450
+    wall[43].w = 850
+    wall[43].x = 625
+    wall[43].y = 1450
 
     //V-bar for dead end (Connected to "4th Below of Starting Box") = v
     wall[18].h = 280
@@ -230,14 +233,14 @@ function init()
     wall[18].y = 992
 
     //H-Bar dead end (connected to "V-bar for dead end") = h
-    wall[45].w = 1100
-    wall[45].x = 120
-    wall[45].y = 864
+    wall[44].w = 1100
+    wall[44].x = 120
+    wall[44].y = 864
 
     //End H-Bar Top (Connected to "2nd Left of Starting Box") = h
-    wall[46].w = 900
-    wall[46].x = -467
-    wall[46].y = 100
+    wall[45].w = 900
+    wall[45].x = -467
+    wall[45].y = 100
 
     //Dead End V-Bar Right (Connected to "H-Bar dead end") = v
     wall[19].h = 760
@@ -255,9 +258,9 @@ function init()
     wall[21].y = 1241
 
     //4th Below of Starting Box Left (Connected to "V-Bar Below in Final Path") = h
-    wall[47].w = 1200
-    wall[47].x = -80
-    wall[47].y = 1034
+    wall[46].w = 1200
+    wall[46].x = -80
+    wall[46].y = 1034
 
     //V-bar Left in Final Path (Connected to "4th Below of Starting Box Left") = v
     wall[22].h = 745
@@ -265,9 +268,9 @@ function init()
     wall[22].y = 650
 
     //End H-Bar Bottom (Connected to "V-bar Left in Final Path") = h
-    wall[48].w = 260
-    wall[48].x = -786
-    wall[48].y = 275
+    wall[47].w = 260
+    wall[47].x = -786
+    wall[47].y = 275
 
     //Final Box Right Top = v
     wall[23].h = 150
@@ -280,14 +283,14 @@ function init()
     wall[24].y = 340
 
     //Final Box Top = h
-    wall[49].w = 250
-    wall[49].x = -1025
-    wall[49].y = -38
+    wall[48].w = 250
+    wall[48].x = -1025
+    wall[48].y = -38
 
     //Final Box Bottom = h
-    wall[50].w = 250
-    wall[50].x = -1025
-    wall[50].y = 403
+    wall[49].w = 250
+    wall[49].x = -1025
+    wall[49].y = 403
 
     //Final Box Left = v
     wall[25].h = 425
