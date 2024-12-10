@@ -14,7 +14,7 @@ var timer = setInterval(main, fps)
 
 //setup
 var state;
-var button = new GameObject();
+var button = new GameObject('#start');
 var avatar = new GameObject('#helmet');
 var wall = new GameObject();
 var level = new GameObject();
@@ -28,6 +28,7 @@ function init()
     state = menu
 
     avatar.color = `#00000000`;
+    button.color = `#00000000`
 
     level.x = 0; 
     level.y = 0;
@@ -306,11 +307,18 @@ init();
 /*---------------Game Screens (states)----------------*/
 function menu()
 {
+
+    button.w = 275
+    button.h = 250
+
     if(clicked(button))
     {
         state = game;
     }
-    button.render()
+    button.render();
+    button.graphic(button.x,button.y);
+    button.img.h = button.h+100
+    button.img.w = button.w+100
 }
 
 function win()
@@ -447,6 +455,7 @@ function game()
     
    }
 
+    //enemy.render();
     sword.render();
     avatar.render();
     avatar.graphic(avatar.x,avatar.y);
