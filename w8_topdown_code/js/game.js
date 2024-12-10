@@ -36,7 +36,7 @@ function init()
     {
         if(i<26) //Vertical (v)
         {
-            wall[i] = new GameObject();
+            wall[i] = new GameObject('#wallBushes');
             wall[i].w = 24
             wall[i].color = `purple`
             wall[i].world = level
@@ -44,7 +44,7 @@ function init()
         }
         else //Horizontail (h)
         {
-            wall[i] = new GameObject();
+            wall[i] = new GameObject('#wallBushes');
             wall[i].h = 24
             wall[i].color = `purple`
             wall[i].world = level
@@ -431,6 +431,9 @@ function game()
    for(let i=0;i<wall.length; i++)
    {
     wall[i].render();
+    wall[i].graphic(wall[i].x,wall[i].y);
+    wall[i].img.w = 24
+    wall[i].img.h = 24
    }
 
     sword.render();
