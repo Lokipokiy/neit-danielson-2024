@@ -17,7 +17,7 @@ var state;
 var button = new GameObject('#start');
 var avatar = new GameObject('#helmet');
 var wall = new GameObject();
-var level = new GameObject();
+var level = new GameObject('#background');
 var sword = new GameObject();
 var enemy = new GameObject();
 var wall = [];
@@ -459,6 +459,7 @@ function game()
     sword.render();
     avatar.render();
     avatar.graphic(avatar.x,avatar.y);
+
     
 }
 
