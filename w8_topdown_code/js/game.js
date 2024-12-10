@@ -19,7 +19,7 @@ var avatar = new GameObject('#helmet');
 var wall = new GameObject();
 var level = new GameObject();
 var sword = new GameObject();
-var bad = new GameObject();
+var enemy = new GameObject();
 var wall = [];
 
 
