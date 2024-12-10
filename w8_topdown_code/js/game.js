@@ -15,7 +15,7 @@ var timer = setInterval(main, fps)
 //setup
 var state;
 var button = new GameObject();
-var avatar = new GameObject();
+var avatar = new GameObject('#helmet');
 var wall = new GameObject();
 var level = new GameObject();
 var sword = new GameObject();
@@ -27,7 +27,7 @@ function init()
 {
     state = menu
 
-    avatar.color = `green`;
+    avatar.color = `#00000000`;
 
     level.x = 0; 
     level.y = 0;
@@ -36,17 +36,17 @@ function init()
     {
         if(i<26) //Vertical (v)
         {
-            wall[i] = new GameObject('#wallBushes');
+            wall[i] = new GameObject('#wallBushesVertical');
             wall[i].w = 24
-            wall[i].color = `purple`
+            wall[i].color = `#00000000`
             wall[i].world = level
             
         }
         else //Horizontail (h)
         {
-            wall[i] = new GameObject('#wallBushes');
+            wall[i] = new GameObject('#wallBushesHorizontal');
             wall[i].h = 24
-            wall[i].color = `purple`
+            wall[i].color = `#00000000`
             wall[i].world = level
         }
     }
@@ -430,14 +430,26 @@ function game()
     
    for(let i=0;i<wall.length; i++)
    {
-    wall[i].render();
-    wall[i].graphic(wall[i].x,wall[i].y);
-    wall[i].img.w = 24
-    wall[i].img.h = 24
+    if(i<26) //Vertical 
+    {
+        wall[i].render();
+        wall[i].graphic(wall[i].x,wall[i].y);
+        wall[i].img.h = wall[i].h*1.1
+        wall[i].img.w = wall[i].w*3.8
+    }
+    else  //Horizontal
+    {
+        wall[i].render();
+        wall[i].graphic(wall[i].x,wall[i].y);
+        wall[i].img.h = wall[i].h*3.8
+        wall[i].img.w = wall[i].w*1.1
+    }
+    
    }
 
     sword.render();
     avatar.render();
+    avatar.graphic(avatar.x,avatar.y);
     
 }
 
