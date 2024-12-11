@@ -411,7 +411,10 @@ function game()
             avatar.x--;
             offset.x--;
         }
-      
+      level.render();
+      level.graphic(level.x,level.y);
+      level.img.w = level.w*100
+      level.img.h = level.h*100
     }
     
    
@@ -436,6 +439,8 @@ function game()
         avatar.y += dy*.15; 
     ----------------------------*/
     
+
+    /*----------------GRAPHICS & RENDERING-----------------------*/
    for(let i=0;i<wall.length; i++)
    {
     if(i<26) //Vertical 
