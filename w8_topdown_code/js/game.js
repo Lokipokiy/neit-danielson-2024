@@ -3,7 +3,7 @@ var c = document.querySelector(`canvas`)
 var ctx = c.getContext(`2d`)
 var fps = 1000/60
 var timer = setInterval(main, fps)
-
+//var line = c.getContext(`2d`)
 
 
     function main()
@@ -20,6 +20,7 @@ var wall = new GameObject();
 var level = new GameObject('#background');
 var sword = new GameObject();
 var enemy = new GameObject();
+var winLine = new GameObject();
 var wall = [];
 
 
@@ -62,7 +63,7 @@ function init()
     wall[1].y = c.height/1.4
 
     //START SCREEN BOX LEFT = v
-    wall[2].h = 525;
+    //wall[2].h = 525;
     wall[2].x = 200;
     wall[2].y = c.height/2.67
 
@@ -84,12 +85,12 @@ function init()
     wall[28].y = 550
 
     // 1st Left of Starting Box - Bottom Segment (Connected to "1st Below of Starting Box") = v
-    wall[4].h = 375
+    //wall[4].h = 375
     wall[4].x = c.width-715
     wall[4].y = c.height-125
     
     // 1st Left of Starting Box - Top Segment = v
-    wall[5].h = 290
+    //wall[5].h = 290
     wall[5].x = c.width-715
     wall[5].y = c.height-570
     
@@ -144,7 +145,7 @@ function init()
     wall[34].y = 660
 
     //2nd Left of Starting Box (Connected to "2nd Below Starting Box") = v
-    wall[10].h = 975
+    //wall[10].h = 975
     wall[10].x = -28
     wall[10].y = 162
 
@@ -229,7 +230,7 @@ function init()
     wall[43].y = 1450
 
     //V-bar for dead end (Connected to "4th Below of Starting Box") = v
-    wall[18].h = 280
+    //wall[18].h = 280
     wall[18].x = 681
     wall[18].y = 992
 
@@ -244,7 +245,7 @@ function init()
     wall[45].y = 100
 
     //Dead End V-Bar Right (Connected to "H-Bar dead end") = v
-    wall[19].h = 760
+   // wall[19].h = 760
     wall[19].x = -418
     wall[19].y = 490
 
@@ -298,7 +299,26 @@ function init()
     wall[25].x = -1138
     wall[25].y = 183
 
+
+
+        winLine.w = 100
+        winLine.h = 425
+        winLine.x = -975
+        winLine.y = 183
+        winLine.color = `rgb(0,0,225)`
+        winLine.world = level
+   
+
     sword.color = `#000000`;
+
+/*enemy path
+line.beginPath()
+line.moveTo(200,605)
+line.lineTo(650,605)
+line.strokeStyle = "rgb(225,0,0)"
+line.lineWidth = 10
+line.stroke()
+line.closePath()----------------------------------------*/
 
 }
 
@@ -323,6 +343,11 @@ function menu()
 
 function win()
 {
+    if(avatar.left.overlaps(winLine.right()))
+    {
+        state = menu;
+        console.log('hit')
+    }
 
 }
 function lose()
@@ -417,7 +442,7 @@ function game()
       level.img.h = level.h*100
     }
     
-   
+    
 
     /*-------Level movement threshold----*/
     //if(avatar.x > 500 || avatar.x < 300)
@@ -464,6 +489,7 @@ function game()
     sword.render();
     avatar.render();
     avatar.graphic(avatar.x,avatar.y);
+    winLine.render();
 
     
 }
