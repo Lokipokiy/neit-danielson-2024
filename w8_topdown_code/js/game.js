@@ -343,11 +343,9 @@ function menu()
 
 function win()
 {
-    if(avatar.left.overlaps(winLine.right()))
-    {
+    
         state = menu;
-        console.log('hit')
-    }
+        
 
 }
 function lose()
@@ -406,6 +404,7 @@ function game()
     avatar.vx *= .85;
     avatar.vy *= .85;
     avatar.move();
+    
 
     //used to move the level. 
     var offset = {x:avatar.vx, y:avatar.vy}
@@ -442,7 +441,11 @@ function game()
       level.img.h = level.h*100
     }
     
-    
+    if(winLine.isOverPoint(avatar.right()))
+    {
+        state = win;
+        console.log('hit')
+    }
 
     /*-------Level movement threshold----*/
     //if(avatar.x > 500 || avatar.x < 300)
