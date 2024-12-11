@@ -21,7 +21,9 @@ var level = new GameObject('#background');
 var sword = new GameObject();
 var enemy = new GameObject();
 var winLine = new GameObject();
+var winScreen = new GameObject('#winImage');
 var wall = [];
+
 
 
 function init()
@@ -63,7 +65,7 @@ function init()
     wall[1].y = c.height/1.4
 
     //START SCREEN BOX LEFT = v
-    //wall[2].h = 525;
+    wall[2].h = 525;
     wall[2].x = 200;
     wall[2].y = c.height/2.67
 
@@ -85,12 +87,12 @@ function init()
     wall[28].y = 550
 
     // 1st Left of Starting Box - Bottom Segment (Connected to "1st Below of Starting Box") = v
-    //wall[4].h = 375
+    wall[4].h = 375
     wall[4].x = c.width-715
     wall[4].y = c.height-125
     
     // 1st Left of Starting Box - Top Segment = v
-    //wall[5].h = 290
+    wall[5].h = 290
     wall[5].x = c.width-715
     wall[5].y = c.height-570
     
@@ -145,7 +147,7 @@ function init()
     wall[34].y = 660
 
     //2nd Left of Starting Box (Connected to "2nd Below Starting Box") = v
-    //wall[10].h = 975
+    wall[10].h = 975
     wall[10].x = -28
     wall[10].y = 162
 
@@ -230,7 +232,7 @@ function init()
     wall[43].y = 1450
 
     //V-bar for dead end (Connected to "4th Below of Starting Box") = v
-    //wall[18].h = 280
+    wall[18].h = 280
     wall[18].x = 681
     wall[18].y = 992
 
@@ -245,7 +247,7 @@ function init()
     wall[45].y = 100
 
     //Dead End V-Bar Right (Connected to "H-Bar dead end") = v
-   // wall[19].h = 760
+    wall[19].h = 760
     wall[19].x = -418
     wall[19].y = 490
 
@@ -300,12 +302,12 @@ function init()
     wall[25].y = 183
 
 
-
+        //win line for avatar collision
         winLine.w = 100
         winLine.h = 425
         winLine.x = -975
         winLine.y = 183
-        winLine.color = `rgb(0,0,225)`
+        winLine.color = `rgb(0,0,0,0)`
         winLine.world = level
    
 
@@ -328,26 +330,43 @@ init();
 function menu()
 {
 
-    button.w = 275
-    button.h = 250
+    button.w = 350
+    button.h = 300
 
     if(clicked(button))
     {
         state = game;
     }
+    //Background for start screen
+    level.render();
+    level.graphic(level.x,level.y);
+    level.img.w = level.w*100
+    level.img.h = level.h*100
+
+    //start button
     button.render();
     button.graphic(button.x,button.y);
-    button.img.h = button.h+100
-    button.img.w = button.w+100
+    button.img.h = button.h
+    button.img.w = button.w+36
 }
+    
 
 function win()
 {
-    
-        state = menu;
-        
 
+    //Background for win screen
+    level.render();
+    level.graphic(level.x,level.y);
+    level.img.w = level.w*100
+    level.img.h = level.h*100
+
+    //win image display
+    winScreen.render();
+    winScreen.graphic(button.x,button.y);
+        
+    
 }
+
 function lose()
 {
 
@@ -441,6 +460,7 @@ function game()
       level.img.h = level.h*100
     }
     
+    //condition to win the game in final box
     if(winLine.isOverPoint(avatar.right()))
     {
         state = win;
